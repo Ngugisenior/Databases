@@ -10,3 +10,11 @@ INSERT Warehouse VALUES('Swimblet','CURVEPOLYGON(CIRCULARSTRING(0 4, 4 0, 8 4, 4
 GO
 SELECT *
 FROM Warehouse;
+
+Use ScottDB
+GO
+DECLARE @MinIncome numeric(7,2)
+SET @MinIncome = (SELECT MIN(sal+comm)
+                    FROM EMP)
+SELECT @MinIncome AS MinimumIncome;
+GO
