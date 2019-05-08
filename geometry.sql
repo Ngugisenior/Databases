@@ -22,3 +22,8 @@ DECLARE @MinIncome numeric(7,2)
 SELECT @MinIncome=Min(sal+comm)
 FROM EMP;
 SELECT @MinIncome AS MinimumIncome;
+---T-SQL Script---
+---1st step create a copy---
+SELECT * INTO TempEmp
+FROM EMP;
+GO
