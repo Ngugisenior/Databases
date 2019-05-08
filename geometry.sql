@@ -71,3 +71,29 @@ SELECT e.EMPNO, e.ENAME, e.JOB, e.sal, t.EMPNO, t.sal
 FROM EMP e INNER JOIN TempEmp t
            ON e.EMPNO = t.EMPNO
 GO
+
+--------------------------------------------------------------+
+--------------------------------------------------------------+
+USE Northwind
+GO
+CREATE FUNCTION MaxUnitPrice(@Category int)
+RETURNS money
+AS
+BEGIN
+     DECLARE @Max money
+	 SELECT @MAX = Max(UnitPrice)
+	 FROM Products
+	 WHERE CategoryID = @Category
+	 IF(@Max IS NULL)
+	    SET @Max = 0
+RETURN @MAX
+END
+GO
+-------Test, use the function-----
+SELECT dbo.MaxUnitPrice(8)
+-----Drop the function because we donot need it anymorte---
+DROP FUNCTION dbo.MaxUnitPrice;
+GO
+USE ScottDB
+DROP TABLE TempEmp;
+GO
