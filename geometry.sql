@@ -18,3 +18,7 @@ SET @MinIncome = (SELECT MIN(sal+comm)
                     FROM EMP)
 SELECT @MinIncome AS MinimumIncome;
 GO
+DECLARE @MinIncome numeric(7,2)
+SELECT @MinIncome=Min(sal+comm)
+FROM EMP;
+SELECT @MinIncome AS MinimumIncome;
