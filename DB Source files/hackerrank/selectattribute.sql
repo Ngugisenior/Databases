@@ -53,3 +53,6 @@ WHERE
       MONTHS < 10
 ORDER BY EMPLOYEE_ID ASC;
 ---------------------------------------------------------------------------------------------------------------------------------
+SELECT SUM(Population)
+FROM City
+WHERE District = 'California';
