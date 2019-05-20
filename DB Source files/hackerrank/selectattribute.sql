@@ -38,3 +38,18 @@ Task: Query that prints out list of employee NAME from EMPLOYEE table in alphabe
 SELECT NAME
 FROM EMPLOYEE
 ORDER BY NAME ASC;
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+/*
+Employee Salaries
+Task: Query to print list of employee NAME from EMPLOYEE table if they have a salary greater than $2000 per month and have been employed for less than 10 months. 
+Sort by ascending EMPLOYEE_ID.
+*/
+SELECT NAME
+FROM EMPLOYEE
+WHERE 
+      SALARY > 2000 
+      AND
+      MONTHS < 10
+ORDER BY EMPLOYEE_ID ASC;
+---------------------------------------------------------------------------------------------------------------------------------
