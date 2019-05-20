@@ -56,3 +56,7 @@ ORDER BY EMPLOYEE_ID ASC;
 SELECT SUM(Population)
 FROM City
 WHERE District = 'California';
+---------------------------------------------------------------------------------------------------------------------------
+SELECT AVG(POPULATION)
+FROM CITY
+WHERE DISTRICT = 'California';
