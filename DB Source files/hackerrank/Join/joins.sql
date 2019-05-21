@@ -1,4 +1,4 @@
---------
+
 /*
 Avergae Population of Each Continent
 ====================================
@@ -32,7 +32,7 @@ Country
 | HeadOfState    | char(60)    |
 | Capital        | int(11)     |
 | Code2          | char(2)     |
-+----------------+-------------+
++----------------+-------------+*/
 SELECT Country.Continent, FLOOR(AVG(City.Population))
 FROM Country
 INNER JOIN City
