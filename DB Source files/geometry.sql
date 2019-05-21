@@ -97,3 +97,39 @@ GO
 USE ScottDB
 DROP TABLE TempEmp;
 GO
+
+
+------------------------------------------------------------------------------------------------------------------------------------------
+SELECT CASE 
+WHEN A + B > C THEN CASE WHEN A = B AND B = C THEN 'Equilateral' WHEN A = B OR B = C OR A = C THEN 'Isosceles' WHEN A != B OR B != C OR A != C THEN 'Scalene' END 
+ELSE 'Not A Triangle' END FROM TRIANGLES;
+
+
+----------------------------------------------------------------------------------------------------------------------------------------
+SELECT N,
+CASE
+WHEN P IS NULL THEN 'Root'
+WHEN N IN (SELECT P FROM BST) THEN 'Inner'
+ELSE 'Leaf'
+END
+FROM BST
+ORDER by N;
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+SELECT c.company_code, c.founder, COUNT(DISTINCT e.lead_manager_code), COUNT(DISTINCT e.senior_manager_code), COUNT(DISTINCT e.manager_code), COUNT(DISTINCT e.employee_code) 
+FROM company c
+JOIN employee e ON c.company_code = e.company_code 
+GROUP BY c.company_code, c.founder 
+ORDER BY c.company_code;
+
+--------------------------------------------------------------------------------------------------------------------------------------
+----Given the CITY and COUNTRY tables, query the sum of the populations of all cities where the CONTINENT is 'Asia'.
+---Note: CITY.CountryCode and COUNTRY.Code are matching key columns.
+SELECT SUM(City.population)
+FROM Country
+INNER JOIN City
+    ON Country.Code = City.CountryCode
+WHERE Country.Continent='Asia';
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
