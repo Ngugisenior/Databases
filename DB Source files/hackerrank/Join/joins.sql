@@ -38,3 +38,9 @@ FROM Country
 INNER JOIN City
     ON Country.Code = City.CountryCode
 GROUP BY Country.Continent;
+                                    
+---===============================================================================
+---===============================================================================
+SELECT COUNT(*)
+FROM CITY
+WHERE POPULATION>100000;
